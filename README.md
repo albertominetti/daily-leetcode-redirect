@@ -17,8 +17,6 @@ That's it.
 
 ## Link
 
-```
-https://albertominetti.github.io/daily-leetcode-redirect/
-```
+[albertominetti.github.io/daily-leetcode-redirect/](https://albertominetti.github.io/daily-leetcode-redirect/)
 
 Bookmark it and save a click every day.
