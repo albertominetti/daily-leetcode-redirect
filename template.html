@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__FRONTEND_ID__. __TITLE__ — Daily Challenge</title>
+<meta http-equiv="refresh" content="0; url=__URL__">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --bg:#0F1115;
+    --surface:#181B21;
+    --border:#262B33;
+    --text:#EDEFF3;
+    --muted:#6B7280;
+    --accent:#F2A93B;
+    --easy:#4ADE80;
+    --medium:#F2A93B;
+    --hard:#F87171;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--bg);
+    color:var(--text);
+    font-family:ui-monospace,"JetBrains Mono","Fira Code","SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+    padding:24px;
+  }
+  .card{
+    width:100%;
+    max-width:460px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:26px 26px 20px;
+  }
+  .path{
+    color:var(--muted);
+    font-size:13px;
+    letter-spacing:.04em;
+    margin-bottom:16px;
+  }
+  .path::before{ content:"~/"; }
+  .line{
+    display:flex;
+    gap:9px;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--muted);
+  }
+  .line .prompt{ color:var(--accent); }
+  .problem{
+    margin:14px 0 10px;
+    font-size:18px;
+    font-weight:700;
+    color:var(--text);
+    line-height:1.45;
+  }
+  .meta{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:999px;
+    border:1px solid currentColor;
+  }
+  .pill.easy{ color:var(--easy); }
+  .pill.medium{ color:var(--medium); }
+  .pill.hard{ color:var(--hard); }
+  .pill.pending{ color:var(--muted); }
+  .status{ color:var(--muted); font-size:13px; }
+  .cursor{
+    display:inline-block;
+    width:7px;
+    height:14px;
+    background:var(--accent);
+    margin-left:1px;
+    vertical-align:middle;
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+  @media (prefers-reduced-motion:reduce){
+    .cursor{ animation:none; }
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:16px;
+    padding:10px 16px;
+    border-radius:7px;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+  }
+  .btn:hover{ background:rgba(242,169,59,.1); }
+  .btn:focus-visible, a:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+  }
+  .footer{
+    margin-top:20px;
+    padding-top:13px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:11px;
+  }
+</style>
+</head>
+<body>
+  <noscript><meta http-equiv="refresh" content="0; url=__URL__"></noscript>
+  <main class="card">
+    <div class="path">daily-challenge %</div>
+    <div class="line"><span class="prompt">$</span><span>fetch --today</span></div>
+    <div class="problem">__FRONTEND_ID__. __TITLE__</div>
+    <div class="meta">
+      <span class="pill __DIFFICULTY_CLASS__">__DIFFICULTY__</span>
+      <span class="status">__DATE__</span>
+    </div>
+    <div class="line"><span class="prompt">&gt;</span><span>redirecting<span class="cursor" aria-hidden="true"></span></span></div>
+    <a class="btn" id="open-link" href="__URL__">open problem →</a>
+    <div class="footer">last synced __SYNCED_AT__ · auto-updates daily at 00:05 UTC</div>
+  </main>
+  <script>window.location.replace("__URL__");</script>
+</body>
+</html>

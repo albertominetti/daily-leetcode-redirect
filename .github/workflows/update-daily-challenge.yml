@@ -1,0 +1,39 @@
+name: Update daily LeetCode redirect
+
+on:
+  schedule:
+    # 00:05 UTC daily — LeetCode's daily challenge rolls over at 00:00 UTC,
+    # this gives it a few minutes of buffer.
+    - cron: "5 0 * * *"
+  workflow_dispatch: {}   # lets you click "Run workflow" in the Actions tab to sync/test on demand
+  push:
+    branches: [main]      # so the first push populates index.html right away
+
+permissions:
+  contents: write          # needed to commit the regenerated index.html back to the repo
+
+concurrency:
+  group: update-daily-redirect
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Fetch today's challenge and rebuild index.html
+        run: bash scripts/sync-daily-challenge.sh
+
+      - name: Commit and push if index.html changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "Already up to date, nothing to commit."
+          else
+            git commit -m "chore: sync daily challenge ($(date -u +%F))"
+            git push
+          fi
