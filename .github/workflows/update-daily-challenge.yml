@@ -2,15 +2,13 @@ name: Update daily LeetCode redirect
 
 on:
   schedule:
-    # 00:05 UTC daily — LeetCode's daily challenge rolls over at 00:00 UTC,
-    # this gives it a few minutes of buffer.
     - cron: "5 0 * * *"
-  workflow_dispatch: {}   # lets you click "Run workflow" in the Actions tab to sync/test on demand
+  workflow_dispatch: {}
   push:
-    branches: [main]      # so the first push populates index.html right away
+    branches: [main]
 
 permissions:
-  contents: write          # needed to commit the regenerated index.html back to the repo
+  contents: write
 
 concurrency:
   group: update-daily-redirect
