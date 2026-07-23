@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Syncing… — Daily Challenge</title>
-<meta http-equiv="refresh" content="3; url=https://leetcode.com/problemset/">
+<title>3513. Number of Unique XOR Triplets I — Daily Challenge</title>
+<meta http-equiv="refresh" content="0; url=https://leetcode.com/problems/number-of-unique-xor-triplets-i/">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:,">
 <style>
@@ -15,6 +15,9 @@
     --text:#EDEFF3;
     --muted:#6B7280;
     --accent:#F2A93B;
+    --easy:#4ADE80;
+    --medium:#F2A93B;
+    --hard:#F87171;
   }
   *{ box-sizing:border-box; }
   html,body{ height:100%; }
@@ -36,46 +39,104 @@
     border-radius:10px;
     padding:26px 26px 20px;
   }
-  .path{ color:var(--muted); font-size:13px; letter-spacing:.04em; margin-bottom:16px; }
+  .path{
+    color:var(--muted);
+    font-size:13px;
+    letter-spacing:.04em;
+    margin-bottom:16px;
+  }
   .path::before{ content:"~/"; }
-  .line{ display:flex; gap:9px; font-size:14px; line-height:1.7; color:var(--muted); }
-  .line .prompt{ color:var(--accent); }
-  .problem{ margin:14px 0 10px; font-size:18px; font-weight:700; color:var(--text); line-height:1.45; }
-  .meta{ display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:18px; }
-  .pill{
-    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.05em;
-    text-transform:uppercase; padding:3px 9px; border-radius:999px; border:1px solid currentColor;
+  .line{
+    display:flex;
+    gap:9px;
+    font-size:14px;
+    line-height:1.7;
     color:var(--muted);
   }
+  .line .prompt{ color:var(--accent); }
+  .problem{
+    margin:14px 0 10px;
+    font-size:18px;
+    font-weight:700;
+    color:var(--text);
+    line-height:1.45;
+  }
+  .meta{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:999px;
+    border:1px solid currentColor;
+  }
+  .pill.easy{ color:var(--easy); }
+  .pill.medium{ color:var(--medium); }
+  .pill.hard{ color:var(--hard); }
+  .pill.pending{ color:var(--muted); }
   .status{ color:var(--muted); font-size:13px; }
   .cursor{
-    display:inline-block; width:7px; height:14px; background:var(--accent);
-    margin-left:1px; vertical-align:middle; animation:blink 1s steps(1) infinite;
+    display:inline-block;
+    width:7px;
+    height:14px;
+    background:var(--accent);
+    margin-left:1px;
+    vertical-align:middle;
+    animation:blink 1s steps(1) infinite;
   }
   @keyframes blink{ 50%{ opacity:0; } }
-  @media (prefers-reduced-motion:reduce){ .cursor{ animation:none; } }
+  @media (prefers-reduced-motion:reduce){
+    .cursor{ animation:none; }
+  }
   .btn{
-    display:inline-flex; align-items:center; gap:8px; margin-top:16px; padding:10px 16px;
-    border-radius:7px; border:1px solid var(--accent); color:var(--accent);
-    text-decoration:none; font-size:13px; font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:16px;
+    padding:10px 16px;
+    border-radius:7px;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
   }
   .btn:hover{ background:rgba(242,169,59,.1); }
-  .btn:focus-visible, a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
-  .footer{ margin-top:20px; padding-top:13px; border-top:1px solid var(--border); color:var(--muted); font-size:11px; }
+  .btn:focus-visible, a:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+  }
+  .footer{
+    margin-top:20px;
+    padding-top:13px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:11px;
+  }
 </style>
 </head>
 <body>
+  <noscript><meta http-equiv="refresh" content="0; url=https://leetcode.com/problems/number-of-unique-xor-triplets-i/"></noscript>
   <main class="card">
     <div class="path">daily-challenge %</div>
     <div class="line"><span class="prompt">$</span><span>fetch --today</span></div>
-    <div class="problem">Not synced yet</div>
+    <div class="problem">3513. Number of Unique XOR Triplets I</div>
     <div class="meta">
-      <span class="pill pending">pending</span>
-      <span class="status">first run hasn't completed</span>
+      <span class="pill medium">Medium</span>
+      <span class="status">2026-07-23</span>
     </div>
-    <div class="line"><span class="prompt">&gt;</span><span>waiting on GitHub Actions<span class="cursor" aria-hidden="true"></span></span></div>
-    <a class="btn" href="https://leetcode.com/problemset/">open leetcode.com →</a>
-    <div class="footer">this page rewrites itself once the "Update daily LeetCode redirect" workflow runs — check the Actions tab, or trigger it manually</div>
+    <div class="line"><span class="prompt">&gt;</span><span>redirecting<span class="cursor" aria-hidden="true"></span></span></div>
+    <a class="btn" id="open-link" href="https://leetcode.com/problems/number-of-unique-xor-triplets-i/">open problem →</a>
+    <div class="footer">last synced 2026-07-23 13:32 UTC · auto-updates daily at 00:05 UTC</div>
   </main>
+  <script>window.location.replace("https://leetcode.com/problems/number-of-unique-xor-triplets-i/");</script>
 </body>
 </html>
