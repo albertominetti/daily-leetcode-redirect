@@ -12,7 +12,6 @@ No setup, no configuration, nothing to install. Just open the link and you're re
 
 That's it.
 
-- **Page shows "Not synced yet"?** Wait a minute and refresh — the first daily sync runs automatically on push. After that, it updates daily.
 - **Page still showing yesterday's problem?** The page auto-updates once a day. Check back after 00:05 UTC.
 
 ## Link
