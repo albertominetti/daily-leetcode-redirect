@@ -9,6 +9,7 @@ No setup, no configuration, nothing to install. Just open the link and you're re
 1. Open `https://albertominetti.github.io/daily-leetcode-redirect/` in your browser.
 2. You'll be instantly redirected to `leetcode.com/problems/<today's-challenge>/`.
 3. Solve the problem.
+4. Good luck! And keep your streak!!
 
 That's it.
 
